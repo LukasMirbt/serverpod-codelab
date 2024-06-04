@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0092)https://codelabs-preview.appspot.com/?file_id=1G-E90e1yUttY2YerKSvrlNvda4LSI6t_GA0RPj-3rJA#0 -->
+<!-- saved from url=(0092)https://codelabs-preview.appspot.com/?file_id=1oqtaiii-uumu25agrwt6JKkxtHZDJdxpcA06z78KQHs#0 -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
@@ -23,36 +23,50 @@
   </style>
 </head>
 <body>
-  <google-codelab id="full-stack-dart-with-serverpod-codelab" environment="web" feedback-link="https://github.com/LukasMirbt/serverpod-codelab/issues" selected="0" google-codelab-ready="" codelab-title="Full-stack Dart with Serverpod"><div id="drawer"><div class="codelab-time-container"><div class="time-remaining" title="Time remaining"><i class="material-icons">access_time</i>20 mins remaining</div></div><div class="steps"><ol><li completed="" selected=""><a href="https://codelabs-preview.appspot.com/?file_id=1G-E90e1yUttY2YerKSvrlNvda4LSI6t_GA0RPj-3rJA#0"><span class="step"><span>Introduction</span></span></a></li><li><a href="https://codelabs-preview.appspot.com/?file_id=1G-E90e1yUttY2YerKSvrlNvda4LSI6t_GA0RPj-3rJA#1"><span class="step"><span>Installation</span></span></a></li><li><a href="https://codelabs-preview.appspot.com/?file_id=1G-E90e1yUttY2YerKSvrlNvda4LSI6t_GA0RPj-3rJA#2"><span class="step"><span>Creating serializable objects</span></span></a></li><li><a href="https://codelabs-preview.appspot.com/?file_id=1G-E90e1yUttY2YerKSvrlNvda4LSI6t_GA0RPj-3rJA#3"><span class="step"><span>Adding an endpoint</span></span></a></li><li><a href="https://codelabs-preview.appspot.com/?file_id=1G-E90e1yUttY2YerKSvrlNvda4LSI6t_GA0RPj-3rJA#4"><span class="step"><span>Using the endpoint</span></span></a></li><li><a href="https://codelabs-preview.appspot.com/?file_id=1G-E90e1yUttY2YerKSvrlNvda4LSI6t_GA0RPj-3rJA#5"><span class="step"><span>Real-time communication</span></span></a></li><li><a href="https://codelabs-preview.appspot.com/?file_id=1G-E90e1yUttY2YerKSvrlNvda4LSI6t_GA0RPj-3rJA#6"><span class="step"><span>Authentication</span></span></a></li></ol></div><div class="metadata"><a target="_blank" href="https://github.com/LukasMirbt/serverpod-codelab/issues"><i class="material-icons">bug_report</i> Report a mistake</a></div></div><div id="codelab-title"><div id="codelab-nav-buttons"><a href="https://codelabs-preview.appspot.com/" id="arrow-back"><i class="material-icons">close</i></a><a href="https://codelabs-preview.appspot.com/?file_id=1G-E90e1yUttY2YerKSvrlNvda4LSI6t_GA0RPj-3rJA#" id="menu"><i class="material-icons">menu</i></a></div><h1 is-upgraded="" class="title">Full-stack Dart with Serverpod</h1><div class="codelab-time-container"><div class="time-remaining" title="Time remaining"><i class="material-icons">access_time</i>20 mins remaining</div></div><devsite-user></devsite-user></div><div id="main"><div id="steps"><google-codelab-step label="Introduction" duration="0" step="1" style="transform: translate3d(0px, 0px, 0px);" selected="">
-        <p><strong>Last Updated:</strong> 2024-05-26</p>
-<h2 is-upgraded=""><strong>Why full-stack Dart?</strong></h2>
-<p>Shorter feedback loop between frontend and backend</p>
-<p>Type safety across network boundary</p>
-<p>Use the same language, analysis, formatting and tooling in frontend and backend</p>
-<p>Share code between frontend and backend</p>
-<h2 is-upgraded=""><strong>Why Serverpod?</strong></h2>
-<p>Serverpod is a complete, competent backend for Flutter. For the glossy sales pitch, head to our main page at <a href="https://serverpod.dev/" target="_blank">Serverpod.dev</a>.</p>
-<p>Every design decision in Serverpod aims to minimize the amount of code you need to write and make it as readable as possible. Apart from being just a server, Serverpod incorporates many common tasks that are otherwise cumbersome to implement or require external services.</p>
+  <google-codelab id="full-stack-dart-with-serverpod-codelab" environment="web" feedback-link="https://github.com/LukasMirbt/serverpod-codelab/issues" selected="0" google-codelab-ready="" codelab-title="Full-stack Dart with Serverpod"><div id="drawer"><div class="codelab-time-container"><div class="time-remaining" title="Time remaining"><i class="material-icons">access_time</i>30 mins remaining</div></div><div class="steps"><ol><li completed="" selected=""><a href="https://codelabs-preview.appspot.com/?file_id=1oqtaiii-uumu25agrwt6JKkxtHZDJdxpcA06z78KQHs#0"><span class="step"><span>Introduction</span></span></a></li><li><a href="https://codelabs-preview.appspot.com/?file_id=1oqtaiii-uumu25agrwt6JKkxtHZDJdxpcA06z78KQHs#1"><span class="step"><span>Installation</span></span></a></li><li><a href="https://codelabs-preview.appspot.com/?file_id=1oqtaiii-uumu25agrwt6JKkxtHZDJdxpcA06z78KQHs#2"><span class="step"><span>Creating serializable objects</span></span></a></li><li><a href="https://codelabs-preview.appspot.com/?file_id=1oqtaiii-uumu25agrwt6JKkxtHZDJdxpcA06z78KQHs#3"><span class="step"><span>Adding an endpoint</span></span></a></li><li><a href="https://codelabs-preview.appspot.com/?file_id=1oqtaiii-uumu25agrwt6JKkxtHZDJdxpcA06z78KQHs#4"><span class="step"><span>Using the endpoint</span></span></a></li><li><a href="https://codelabs-preview.appspot.com/?file_id=1oqtaiii-uumu25agrwt6JKkxtHZDJdxpcA06z78KQHs#5"><span class="step"><span>Real-time communication</span></span></a></li><li><a href="https://codelabs-preview.appspot.com/?file_id=1oqtaiii-uumu25agrwt6JKkxtHZDJdxpcA06z78KQHs#6"><span class="step"><span>Authentication</span></span></a></li></ol></div><div class="metadata"><a target="_blank" href="https://github.com/LukasMirbt/serverpod-codelab/issues"><i class="material-icons">bug_report</i> Report a mistake</a></div></div><div id="codelab-title"><div id="codelab-nav-buttons"><a href="https://codelabs-preview.appspot.com/" id="arrow-back"><i class="material-icons">close</i></a><a href="https://codelabs-preview.appspot.com/?file_id=1oqtaiii-uumu25agrwt6JKkxtHZDJdxpcA06z78KQHs#" id="menu"><i class="material-icons">menu</i></a></div><h1 is-upgraded="" class="title">Full-stack Dart with Serverpod</h1><div class="codelab-time-container"><div class="time-remaining" title="Time remaining"><i class="material-icons">access_time</i>30 mins remaining</div></div><devsite-user></devsite-user></div><div id="main"><div id="steps"><google-codelab-step label="Introduction" duration="0" step="1" style="transform: translate3d(0px, 0px, 0px);" selected="">
+        <p><strong>Last Updated:</strong> 2024-05-27</p>
+<h2 is-upgraded=""><strong>What we will do in this Codelab</strong></h2>
+<ul>
+<li>Work exclusively in Dart</li>
+<li>Create a CRUD endpoint and generate a typesafe client</li>
+<li>Generate a serializable data model with database bindings</li>
+<li>Access the database and make a typesafe query</li>
+<li>Add real-time communication</li>
+<li>Add authentication</li>
+</ul>
+<p><strong>We will do all of this in just 30 minutes.</strong></p>
 
 
-      </div></div></google-codelab-step><google-codelab-step label="Installation" duration="2" step="2" style="transform: translate3d(-110%, 0px, 0px);">
-        <h2 is-upgraded=""><strong>Serverpod CLI</strong></h2>
+      </div></div></google-codelab-step><google-codelab-step label="Installation" duration="5" step="2" style="transform: translate3d(110%, 0px, 0px);">
+        <h2 is-upgraded=""><strong>Requirements</strong></h2>
+<p>Flutter 3.22</p>
+<h2 is-upgraded=""><strong>Serverpod CLI</strong></h2>
 <pre>$ dart pub global activate serverpod_cli</pre>
 <p>Test the installation by running:</p>
 <pre>$ serverpod</pre>
 <p>If everything is correctly configured, the help for the serverpod command is now displayed.</p>
+<h2 is-upgraded=""><strong>Add the VS Code extension</strong></h2>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=serverpod.serverpod" target="_blank">Serverpod extension</a></p>
 <h2 is-upgraded=""><strong>Starter repository</strong></h2>
 <pre>$ git clone https://github.com/LukasMirbt/mypod/
+$ cd mypod
 $ git checkout start</pre>
-<h2 is-upgraded=""><strong>Docker</strong></h2>
+<p>Make sure to run <code>flutter pub get</code> in all the three packages.</p>
+<h2 is-upgraded=""><strong>Install Docker</strong></h2>
 <p><a href="https://docs.docker.com/get-docker/" target="_blank">https://docs.docker.com/get-docker/</a></p>
-<p>Docker is used to manage Postgres and (optionally) Redis.</p>
-<h2 is-upgraded=""><strong>VS Code extension</strong></h2>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=serverpod.serverpod" target="_blank">Serverpod extension</a></p>
-<p>The Serverpod VS Code extension makes it easy to work with your Serverpod projects. It provides real-time diagnostics and syntax highlighting for model files in your project.</p>
+<h2 is-upgraded=""><strong>Install Postico</strong></h2>
+<p><a href="https://eggerapps.at/postico2/" target="_blank">https://eggerapps.at/postico2/</a></p>
+<p><strong>First, make sure that the Docker application is running.</strong></p>
+<p>Then, run the following command:</p>
+<pre>$ docker compose up --build --detach</pre>
+<p>Now connect Postico to the database:</p>
+<pre>Port: 8090
+Database: mypod
+User: postgres
+Password: EVYfYRCPdHKS2LCcWnDr28pHeTCuaMTf</pre>
 
 
-      </div></div></google-codelab-step><google-codelab-step label="Creating serializable objects" duration="0" step="3" style="transform: translate3d(110%, 0px, 0px);">
+      </div></div></google-codelab-step><google-codelab-step label="Creating serializable objects" duration="4" step="3">
         <p>Create <code>note.spy.yaml</code> in <code>mypod_server/lib/src/models.</code></p>
 <pre><code><span class="kwd">class</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Note</span><span class="pln">
 fields</span><span class="pun">:</span><span class="pln">
@@ -66,7 +80,7 @@ fields</span><span class="pun">:</span><span class="pln">
 <pre>$ cd mypod_server
 $ serverpod create-migration
 $ dart run bin/main.dart --role maintenance --apply-migrations</pre>
-<p>Also, create the <code>NoteList</code> model in <code>note_list.spy.yaml</code>.</p>
+<p>Also create <code>note_list.spy.yaml</code> and add the <code>NoteList</code> model.</p>
 <pre><code><span class="kwd">class</span><span class="pun">:</span><span class="pln"> </span><span class="typ">NoteList</span><span class="pln">
 fields</span><span class="pun">:</span><span class="pln">
  items</span><span class="pun">:</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">Note</span><span class="pun">&gt;</span></code></pre>
@@ -74,9 +88,12 @@ fields</span><span class="pun">:</span><span class="pln">
 <pre>$ serverpod generate</pre>
 
 
-      </div></div></google-codelab-step><google-codelab-step label="Adding an endpoint" duration="3" step="4">
+      </div></div></google-codelab-step><google-codelab-step label="Adding an endpoint" duration="2" step="4">
         <p>Create <code>note_endpoint.dart</code> in <code>mypod_server/lib/src/endpoints</code>.</p>
-<pre><code><span class="kwd">class</span><span class="pln"> </span><span class="typ">NoteEndpoint</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">Endpoint</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+<pre><code><span class="kwd">import</span><span class="pln"> </span><span class="str">'package:mypod_server/src/generated/protocol.dart'</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> </span><span class="str">'package:serverpod/serverpod.dart'</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">NoteEndpoint</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">Endpoint</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
  </span><span class="typ">Future</span><span class="pun">&lt;</span><span class="typ">NoteList</span><span class="pun">&gt;</span><span class="pln"> fetchAll</span><span class="pun">(</span><span class="typ">Session</span><span class="pln"> session</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">async</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
    </span><span class="kwd">final</span><span class="pln"> items </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">await</span><span class="pln"> </span><span class="typ">Note</span><span class="pun">.</span><span class="pln">db</span><span class="pun">.</span><span class="pln">find</span><span class="pun">(</span><span class="pln">
      session</span><span class="pun">,</span><span class="pln">
@@ -102,7 +119,7 @@ fields</span><span class="pun">:</span><span class="pln">
 <pre>$ serverpod generate</pre>
 
 
-      </div></div></google-codelab-step><google-codelab-step label="Using the endpoint" duration="3" step="5">
+      </div></div></google-codelab-step><google-codelab-step label="Using the endpoint" duration="5" step="5">
         <p>Implement the methods in <code>mypod_flutter/lib/note/cubit/note_cubit.dart</code></p>
 <pre><code><span class="pln"> </span><span class="typ">Future</span><span class="str">&lt;void&gt;</span><span class="pln"> start</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">async</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
    </span><span class="kwd">final</span><span class="pln"> list </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">await</span><span class="pln"> _client</span><span class="pun">.</span><span class="pln">note</span><span class="pun">.</span><span class="pln">fetchAll</span><span class="pun">();</span><span class="pln">
@@ -133,11 +150,8 @@ fields</span><span class="pun">:</span><span class="pln">
    </span><span class="pun">);</span><span class="pln">
  </span><span class="pun">}</span></code></pre>
 <h2 is-upgraded=""><strong>Start the server</strong></h2>
-<p><strong>First, make sure that </strong><a href="https://www.docker.com/products/docker-desktop/" target="_blank"><strong>Docker Desktop</strong></a><strong> is running.</strong></p>
-<p>Then, run the following commands:</p>
-<pre>$ cd mypod/mypod_server
-$ docker compose up --build --detach
-$ dart bin/main.dart --apply-migrations</pre>
+<p>Run the following command:</p>
+<pre>$ dart bin/main.dart --apply-migrations</pre>
 <h2 is-upgraded=""><strong>Run the app</strong></h2>
 <p>Open a new terminal window.</p>
 <p>Run <code>make f</code> to regenerate <code>note_state.freezed.dart</code> and then run the app.</p>
@@ -147,7 +161,7 @@ $ flutter run -d chrome</pre>
 <p>You should now be able to view, add and delete notes.</p>
 
 
-      </div></div></google-codelab-step><google-codelab-step label="Real-time communication" duration="3" step="6">
+      </div></div></google-codelab-step><google-codelab-step label="Real-time communication" duration="4" step="6">
         <p>In <code>NoteEndpoint</code>, add <code>_noteChannel</code> and override the <code>streamOpened</code> method.</p>
 <pre><code><span class="kwd">class</span><span class="pln"> </span><span class="typ">NoteEndpoint</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">Endpoint</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
  </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> _noteChannel </span><span class="pun">=</span><span class="pln"> </span><span class="str">'noteChannel'</span><span class="pun">;</span><span class="pln">
@@ -171,7 +185,7 @@ $ flutter run -d chrome</pre>
    session</span><span class="pun">.</span><span class="pln">messages</span><span class="pun">.</span><span class="pln">postMessage</span><span class="pun">(</span><span class="pln">_noteChannel</span><span class="pun">,</span><span class="pln"> noteList</span><span class="pun">);</span><span class="pln">
    </span><span class="kwd">return</span><span class="pln"> noteList</span><span class="pun">;</span><span class="pln">
  </span><span class="pun">}</span></code></pre>
-<p>In NoteCubit, listen to the note stream and open a streaming connection on start.</p>
+<p>In <code>NoteCubit</code>, listen to the note stream and open a streaming connection on start.</p>
 <pre><code><span class="pln"> </span><span class="typ">NoteCubit</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">_client</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">super</span><span class="pun">(</span><span class="typ">NoteState</span><span class="pun">.</span><span class="pln">initial</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
    _client</span><span class="pun">.</span><span class="pln">note</span><span class="pun">.</span><span class="pln">stream</span><span class="pun">.</span><span class="pln">listen</span><span class="pun">(</span><span class="pln">_onUpdated</span><span class="pun">);</span><span class="pln">
  </span><span class="pun">}</span><span class="pln">
@@ -197,17 +211,16 @@ $ flutter run -d chrome</pre>
      </span><span class="pun">),</span><span class="pln">
    </span><span class="pun">);</span><span class="pln">
  </span><span class="pun">}</span></code></pre>
-<h2 is-upgraded=""><strong>Start the server</strong></h2>
-<pre>$ cd mypod/mypod_server
-$ docker compose up --build --detach
-$ dart bin/main.dart --apply-migrations</pre>
+<h2 is-upgraded=""><strong>Restart the server</strong></h2>
+<p>Stop the existing server process with <code>Ctrl + C</code> and then run:</p>
+<pre>$ dart bin/main.dart --apply-migrations</pre>
 <h2 is-upgraded=""><strong>Run two instances of the app</strong></h2>
 <p>Open two new terminal window and run the app in both:</p>
 <pre>$ cd mypod_flutter
 $ flutter run -d chrome</pre>
 
 
-      </div></div></google-codelab-step><google-codelab-step label="Authentication" duration="9" step="7" style="transform: translate3d(110%, 0px, 0px);">
+      </div></div></google-codelab-step><google-codelab-step label="Authentication" duration="10" step="7">
         <p>Add the following to <code>NoteEndpoint</code>.</p>
 <pre><code><span class="pln"> </span><span class="lit">@override</span><span class="pln">
  </span><span class="kwd">bool</span><span class="pln"> </span><span class="kwd">get</span><span class="pln"> requireLogin </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span></code></pre>
@@ -221,10 +234,11 @@ $ flutter run -d chrome</pre>
    nickname</span><span class="pun">:</span><span class="pln"> authentication</span></code></pre>
 <p>Create and apply migrations to add the auth module tables to the database.</p>
 <pre>$ serverpod create-migration
-$ dart run bin/main.dart --role maintenance --apply-migrations</pre>
+$ dart run bin/main.dart --role maintenance --apply-migrations
+$ serverpod generate</pre>
 <p>In <code>mypod_server/lib/server.dart</code>, import <code>serverpod_auth_server.</code> </p>
 <pre><code><span class="kwd">import</span><span class="pln"> </span><span class="str">'package:serverpod_auth_server/module.dart'</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> auth</span><span class="pun">;</span></code></pre>
-<p>Then, add the following and the end of the <code>run</code> method:</p>
+<p>Then, add the following at the end of the <code>run</code> method:</p>
 <pre><code><span class="pln"> auth</span><span class="pun">.</span><span class="typ">AuthConfig</span><span class="pun">.</span><span class="kwd">set</span><span class="pun">(</span><span class="pln">
    auth</span><span class="pun">.</span><span class="typ">AuthConfig</span><span class="pun">(</span><span class="pln">
      sendValidationEmail</span><span class="pun">:</span><span class="pln"> </span><span class="pun">(</span><span class="pln">session</span><span class="pun">,</span><span class="pln"> email</span><span class="pun">,</span><span class="pln"> validationCode</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">async</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
@@ -264,17 +278,19 @@ $ dart run bin/main.dart --role maintenance --apply-migrations</pre>
    </span><span class="typ">App</span><span class="pun">(</span><span class="pln">client</span><span class="pun">),</span><span class="pln">
  </span><span class="pun">);</span><span class="pln">
 </span><span class="pun">}</span></code></pre>
-<p>Finally, set <code>LoginPage</code> as the initial route in <code>app_view.dart</code> and uncomment <code>_SignInButton</code> in <code>login_page.dart</code>.</p>
+<p>Set <code>LoginPage</code> as the initial route in <code>app_view.dart</code>.</p>
 <pre><code><span class="pln">onGenerateRoute</span><span class="pun">:</span><span class="pln"> </span><span class="pun">(</span><span class="pln">_</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="typ">LoginPage</span><span class="pun">.</span><span class="pln">route</span><span class="pun">(),</span></code></pre>
+<p>Finally, uncomment <code>_SignInButton</code> in <code>login_page.dart</code>.</p>
 <h2 is-upgraded=""><strong>Run the app</strong></h2>
 <p>Make sure the server is running.</p>
 <p>Once again, open two new terminal windows and run the app in both:</p>
 <pre>$ cd mypod_flutter
 $ flutter run -d chrome</pre>
+<p>The validation code for logging in is printed in the server console.</p>
 <p>You should now be able to create an account, log in and add notes.</p>
 
 
-      </div></div></google-codelab-step></div><div id="controls"><div id="fabs"><a href="https://codelabs-preview.appspot.com/?file_id=1G-E90e1yUttY2YerKSvrlNvda4LSI6t_GA0RPj-3rJA#" id="previous-step" title="Previous step" disappear="">Back</a><div class="spacer"></div><a href="https://codelabs-preview.appspot.com/?file_id=1G-E90e1yUttY2YerKSvrlNvda4LSI6t_GA0RPj-3rJA#" id="next-step" title="Next step">Next</a><a href="https://codelabs-preview.appspot.com/" id="done" title="Codelab complete" hidden="">Done</a></div></div></div></google-codelab>
+      </div></div></google-codelab-step></div><div id="controls"><div id="fabs"><a href="https://codelabs-preview.appspot.com/?file_id=1oqtaiii-uumu25agrwt6JKkxtHZDJdxpcA06z78KQHs#" id="previous-step" title="Previous step" disappear="">Back</a><div class="spacer"></div><a href="https://codelabs-preview.appspot.com/?file_id=1oqtaiii-uumu25agrwt6JKkxtHZDJdxpcA06z78KQHs#" id="next-step" title="Next step">Next</a><a href="https://codelabs-preview.appspot.com/" id="done" hidden="" title="Codelab complete">Done</a></div></div></div></google-codelab>
 
   <script async="">
     document.addEventListener("DOMContentLoaded", function() {
