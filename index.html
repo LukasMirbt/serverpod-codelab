@@ -37,7 +37,7 @@
 <p><strong>We will do all of this in just 30 minutes.</strong></p>
 
 
-      </div></div></google-codelab-step><google-codelab-step label="Installation" duration="5" step="2" style="transform: translate3d(110%, 0px, 0px);">
+      </div></div></google-codelab-step><google-codelab-step label="Installation" duration="5" step="2"><div class="instructions">
         <h2 is-upgraded=""><strong>Requirements</strong></h2>
 <p>Flutter 3.22</p>
 <h2 is-upgraded=""><strong>Serverpod CLI</strong></h2>
@@ -49,21 +49,22 @@
 <p><a href="https://marketplace.visualstudio.com/items?itemName=serverpod.serverpod" target="_blank">Serverpod extension</a></p>
 <h2 is-upgraded=""><strong>Starter repository</strong></h2>
 <pre>$ git clone https://github.com/LukasMirbt/mypod/
-$ cd mypod
-$ git checkout start</pre>
+$ cd mypod</pre>
 <p>Make sure to run <code>flutter pub get</code> in all the three packages.</p>
+<p><code>mypod_flutter</code> will have some compile errors at this stage.</p>
 <h2 is-upgraded=""><strong>Install Docker</strong></h2>
 <p><a href="https://docs.docker.com/get-docker/" target="_blank">https://docs.docker.com/get-docker/</a></p>
 <h2 is-upgraded=""><strong>Install Postico</strong></h2>
 <p><a href="https://eggerapps.at/postico2/" target="_blank">https://eggerapps.at/postico2/</a></p>
 <p><strong>First, make sure that the Docker application is running.</strong></p>
-<p>Then, run the following command:</p>
-<pre>$ docker compose up --build --detach</pre>
-<p>Now connect Postico to the database:</p>
+<p>Then, run the following commands:</p>
+<pre>$ cd mypod_server
+$ docker compose up --build --detach</pre>
+<p>Now open Postico and connect to the database with the following details:</p>
 <pre>Port: 8090
 Database: mypod
 User: postgres
-Password: EVYfYRCPdHKS2LCcWnDr28pHeTCuaMTf</pre>
+Password: av_c_xT6c8Dn9iPQZnNsoZl2zDIx6CQx</pre>
 
 
       </div></div></google-codelab-step><google-codelab-step label="Creating serializable objects" duration="4" step="3">
@@ -77,8 +78,7 @@ table</span><span class="pun">:</span><span class="pln"> note
 fields</span><span class="pun">:</span><span class="pln">
  text</span><span class="pun">:</span><span class="pln"> </span><span class="typ">String</span></code></pre>
 <p>Now, create the <code>note</code> table in the database by running:</p>
-<pre>$ cd mypod_server
-$ serverpod create-migration
+<pre>$ serverpod create-migration
 $ dart run bin/main.dart --role maintenance --apply-migrations</pre>
 <p>Also create <code>note_list.spy.yaml</code> and add the <code>NoteList</code> model.</p>
 <pre><code><span class="kwd">class</span><span class="pun">:</span><span class="pln"> </span><span class="typ">NoteList</span><span class="pln">
@@ -192,7 +192,7 @@ $ flutter run -d chrome</pre>
 
  </span><span class="kwd">final</span><span class="pln"> </span><span class="typ">Client</span><span class="pln"> _client</span><span class="pun">;</span><span class="pln">
 
- </span><span class="kwd">void</span><span class="pln"> _onUpdated</span><span class="pun">(</span><span class="typ">SerializableEntity</span><span class="pln"> list</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+ </span><span class="kwd">void</span><span class="pln"> _onUpdated</span><span class="pun">(</span><span class="typ">SerializableModel</span><span class="pln"> list</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
    emit</span><span class="pun">(</span><span class="pln">
      state</span><span class="pun">.</span><span class="pln">copyWith</span><span class="pun">(</span><span class="pln">
        list</span><span class="pun">:</span><span class="pln"> list </span><span class="kwd">as</span><span class="pln"> </span><span class="typ">NoteList</span><span class="pun">,</span><span class="pln">
@@ -220,14 +220,14 @@ $ flutter run -d chrome</pre>
 $ flutter run -d chrome</pre>
 
 
-      </div></div></google-codelab-step><google-codelab-step label="Authentication" duration="10" step="7">
+      </div></div></google-codelab-step><google-codelab-step label="Authentication" duration="10" step="7" style="transform: translate3d(110%, 0px, 0px);">
         <p>Add the following to <code>NoteEndpoint</code>.</p>
 <pre><code><span class="pln"> </span><span class="lit">@override</span><span class="pln">
  </span><span class="kwd">bool</span><span class="pln"> </span><span class="kwd">get</span><span class="pln"> requireLogin </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span></code></pre>
 <p>Restart the server and try making a request. It should now fail with status 403.</p>
 <p>Add <code>serverpod_auth_server</code> as a dependency in <code>mypod_server/pubspec.yaml</code>.</p>
 <pre><code><span class="pln">dependencies</span><span class="pun">:</span><span class="pln">
- serverpod_auth_server</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1.2</span><span class="pun">.</span><span class="lit">7</span></code></pre>
+ serverpod_auth_server</span><span class="pun">:</span><span class="pln"> </span><span class="lit">2.0</span><span class="pun">.</span><span class="lit">0</span></code></pre>
 <p>Add this at the end of <code>config/generator.yaml</code>:</p>
 <pre><code><span class="pln">modules</span><span class="pun">:</span><span class="pln">
  serverpod_auth</span><span class="pun">:</span><span class="pln">
@@ -236,9 +236,18 @@ $ flutter run -d chrome</pre>
 <pre>$ serverpod create-migration
 $ dart run bin/main.dart --role maintenance --apply-migrations
 $ serverpod generate</pre>
-<p>In <code>mypod_server/lib/server.dart</code>, import <code>serverpod_auth_server.</code> </p>
-<pre><code><span class="kwd">import</span><span class="pln"> </span><span class="str">'package:serverpod_auth_server/module.dart'</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> auth</span><span class="pun">;</span></code></pre>
-<p>Then, add the following at the end of the <code>run</code> method:</p>
+<p>In <code>mypod_server/lib/server.dart</code>, import <code>serverpod_auth_server</code> and add the <code>authenticationHandler</code>. </p>
+<pre><code><span class="kwd">import</span><span class="pln"> </span><span class="str">'package:serverpod_auth_server/module.dart'</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> auth</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">(</span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">String</span><span class="pun">&gt;</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">async</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+ </span><span class="kwd">final</span><span class="pln"> pod </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Serverpod</span><span class="pun">(</span><span class="pln">
+   args</span><span class="pun">,</span><span class="pln">
+   </span><span class="typ">Protocol</span><span class="pun">(),</span><span class="pln">
+   </span><span class="typ">Endpoints</span><span class="pun">(),</span><span class="pln">
+   authenticationHandler</span><span class="pun">:</span><span class="pln"> auth</span><span class="pun">.</span><span class="pln">authenticationHandler</span><span class="pun">,</span><span class="pln">
+ </span><span class="pun">);</span><span class="pln">
+</span></code></pre>
+<p>Then, add the following at the end of the method:</p>
 <pre><code><span class="pln"> auth</span><span class="pun">.</span><span class="typ">AuthConfig</span><span class="pun">.</span><span class="kwd">set</span><span class="pun">(</span><span class="pln">
    auth</span><span class="pun">.</span><span class="typ">AuthConfig</span><span class="pun">(</span><span class="pln">
      sendValidationEmail</span><span class="pun">:</span><span class="pln"> </span><span class="pun">(</span><span class="pln">session</span><span class="pun">,</span><span class="pln"> email</span><span class="pun">,</span><span class="pln"> validationCode</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">async</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
@@ -258,7 +267,7 @@ $ serverpod generate</pre>
  </span><span class="kwd">await</span><span class="pln"> pod</span><span class="pun">.</span><span class="pln">start</span><span class="pun">();</span></code></pre>
 <p>In <code>mypod_client/pubspec.yaml</code>, add:</p>
 <pre><code><span class="pln">dependencies</span><span class="pun">:</span><span class="pln">
- serverpod_auth_client</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1.2</span><span class="pun">.</span><span class="lit">7</span></code></pre>
+ serverpod_auth_client</span><span class="pun">:</span><span class="pln"> </span><span class="lit">2.0</span><span class="pun">.</span><span class="lit">0</span></code></pre>
 <p>Now in <code>mypod_flutter</code>, update <code>lib/main.dart</code> to the following:</p>
 <pre><code><span class="kwd">void</span><span class="pln"> main</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">async</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
  </span><span class="typ">WidgetsFlutterBinding</span><span class="pun">.</span><span class="pln">ensureInitialized</span><span class="pun">();</span><span class="pln">
@@ -280,7 +289,7 @@ $ serverpod generate</pre>
 </span><span class="pun">}</span></code></pre>
 <p>Set <code>LoginPage</code> as the initial route in <code>app_view.dart</code>.</p>
 <pre><code><span class="pln">onGenerateRoute</span><span class="pun">:</span><span class="pln"> </span><span class="pun">(</span><span class="pln">_</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="typ">LoginPage</span><span class="pun">.</span><span class="pln">route</span><span class="pun">(),</span></code></pre>
-<p>Finally, uncomment <code>_SignInButton</code> in <code>login_page.dart</code>.</p>
+<p><strong>Finally, uncomment </strong><strong><code>_SignInButton</code></strong><strong> in </strong><strong><code>login_page.dart</code></strong><strong>.</strong></p>
 <h2 is-upgraded=""><strong>Run the app</strong></h2>
 <p>Make sure the server is running.</p>
 <p>Once again, open two new terminal windows and run the app in both:</p>
@@ -290,7 +299,7 @@ $ flutter run -d chrome</pre>
 <p>You should now be able to create an account, log in and add notes.</p>
 
 
-      </div></div></google-codelab-step></div><div id="controls"><div id="fabs"><a href="https://codelabs-preview.appspot.com/?file_id=1oqtaiii-uumu25agrwt6JKkxtHZDJdxpcA06z78KQHs#" id="previous-step" title="Previous step" disappear="">Back</a><div class="spacer"></div><a href="https://codelabs-preview.appspot.com/?file_id=1oqtaiii-uumu25agrwt6JKkxtHZDJdxpcA06z78KQHs#" id="next-step" title="Next step">Next</a><a href="https://codelabs-preview.appspot.com/" id="done" hidden="" title="Codelab complete">Done</a></div></div></div></google-codelab>
+      </div></div></google-codelab-step></div><div id="controls"><div id="fabs"><a href="https://codelabs-preview.appspot.com/?file_id=1oqtaiii-uumu25agrwt6JKkxtHZDJdxpcA06z78KQHs#" id="previous-step" title="Previous step" disappear="">Back</a><div class="spacer"></div><a href="https://codelabs-preview.appspot.com/?file_id=1oqtaiii-uumu25agrwt6JKkxtHZDJdxpcA06z78KQHs#" id="next-step" title="Next step">Next</a><a href="https://codelabs-preview.appspot.com/" id="done" title="Codelab complete" hidden="">Done</a></div></div></div></google-codelab>
 
   <script async="">
     document.addEventListener("DOMContentLoaded", function() {
