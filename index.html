@@ -5,14 +5,10 @@
   <meta name="theme-color" content="#4F7DC9">
   
   <title>Full-stack Dart with Serverpod</title>
-  <link rel="stylesheet" href="./files/css">
-  <link rel="stylesheet" href="./files/icon">
-  <link rel="stylesheet" href="./files/codelab-elements.css">
-  <link rel="stylesheet" href="./files/prettify.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./Full-stack Dart with Serverpod_files/css">
+  <link rel="stylesheet" href="./Full-stack Dart with Serverpod_files/icon">
+  <link rel="stylesheet" href="./Full-stack Dart with Serverpod_files/codelab-elements.css">
+  <link rel="stylesheet" href="./Full-stack Dart with Serverpod_files/prettify.css">
   <style>
     .success {
       color: #1e8e3e;
@@ -37,7 +33,7 @@
 <p><strong>We will do all of this in just 30 minutes.</strong></p>
 
 
-      </div></div></google-codelab-step><google-codelab-step label="Installation" duration="5" step="2"><div class="instructions">
+      </div></div></google-codelab-step><google-codelab-step label="Installation" duration="5" step="2">
         <h2 is-upgraded=""><strong>Requirements</strong></h2>
 <p>Flutter 3.22</p>
 <h2 is-upgraded=""><strong>Serverpod CLI</strong></h2>
@@ -67,7 +63,7 @@ User: postgres
 Password: av_c_xT6c8Dn9iPQZnNsoZl2zDIx6CQx</pre>
 
 
-      </div></div></google-codelab-step><google-codelab-step label="Creating serializable objects" duration="4" step="3">
+      </div></div></google-codelab-step><google-codelab-step label="Creating serializable objects" duration="4" step="3"><div class="instructions">
         <p>Create <code>note.spy.yaml</code> in <code>mypod_server/lib/src/models.</code></p>
 <pre><code><span class="kwd">class</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Note</span><span class="pln">
 fields</span><span class="pun">:</span><span class="pln">
@@ -88,7 +84,7 @@ fields</span><span class="pun">:</span><span class="pln">
 <pre>$ serverpod generate</pre>
 
 
-      </div></div></google-codelab-step><google-codelab-step label="Adding an endpoint" duration="2" step="4">
+      </div></div></google-codelab-step><google-codelab-step label="Adding an endpoint" duration="2" step="4"><div class="instructions">
         <p>Create <code>note_endpoint.dart</code> in <code>mypod_server/lib/src/endpoints</code>.</p>
 <pre><code><span class="kwd">import</span><span class="pln"> </span><span class="str">'package:mypod_server/src/generated/protocol.dart'</span><span class="pun">;</span><span class="pln">
 </span><span class="kwd">import</span><span class="pln"> </span><span class="str">'package:serverpod/serverpod.dart'</span><span class="pun">;</span><span class="pln">
@@ -119,7 +115,7 @@ fields</span><span class="pun">:</span><span class="pln">
 <pre>$ serverpod generate</pre>
 
 
-      </div></div></google-codelab-step><google-codelab-step label="Using the endpoint" duration="5" step="5">
+      </div></div></google-codelab-step><google-codelab-step label="Using the endpoint" duration="5" step="5"><div class="instructions">
         <p>Implement the methods in <code>mypod_flutter/lib/note/cubit/note_cubit.dart</code></p>
 <pre><code><span class="pln"> </span><span class="typ">Future</span><span class="str">&lt;void&gt;</span><span class="pln"> start</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">async</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
    </span><span class="kwd">final</span><span class="pln"> list </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">await</span><span class="pln"> _client</span><span class="pun">.</span><span class="pln">note</span><span class="pun">.</span><span class="pln">fetchAll</span><span class="pun">();</span><span class="pln">
@@ -161,7 +157,7 @@ $ flutter run -d chrome</pre>
 <p>You should now be able to view, add and delete notes.</p>
 
 
-      </div></div></google-codelab-step><google-codelab-step label="Real-time communication" duration="4" step="6">
+      </div></div></google-codelab-step><google-codelab-step label="Real-time communication" duration="4" step="6"><div class="instructions">
         <p>In <code>NoteEndpoint</code>, add <code>_noteChannel</code> and override the <code>streamOpened</code> method.</p>
 <pre><code><span class="kwd">class</span><span class="pln"> </span><span class="typ">NoteEndpoint</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">Endpoint</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
  </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> _noteChannel </span><span class="pun">=</span><span class="pln"> </span><span class="str">'noteChannel'</span><span class="pun">;</span><span class="pln">
@@ -224,7 +220,7 @@ $ flutter run -d chrome</pre>
         <p>Add the following to <code>NoteEndpoint</code>.</p>
 <pre><code><span class="pln"> </span><span class="lit">@override</span><span class="pln">
  </span><span class="kwd">bool</span><span class="pln"> </span><span class="kwd">get</span><span class="pln"> requireLogin </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span></code></pre>
-<p>Restart the server and try making a request. It should now fail with status 403.</p>
+<p>Restart the server and try making a request. It should now fail with status 401.</p>
 <p>Add <code>serverpod_auth_server</code> as a dependency in <code>mypod_server/pubspec.yaml</code>.</p>
 <pre><code><span class="pln">dependencies</span><span class="pun">:</span><span class="pln">
  serverpod_auth_server</span><span class="pun">:</span><span class="pln"> </span><span class="lit">2.0</span><span class="pun">.</span><span class="lit">0</span></code></pre>
@@ -237,7 +233,7 @@ $ flutter run -d chrome</pre>
 $ dart run bin/main.dart --role maintenance --apply-migrations
 $ serverpod generate</pre>
 <p>In <code>mypod_server/lib/server.dart</code>, import <code>serverpod_auth_server</code> and add the <code>authenticationHandler</code>. </p>
-<pre><code><span class="kwd">import</span><span class="pln"> </span><span class="str">'package:serverpod_auth_server/module.dart'</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> auth</span><span class="pun">;</span><span class="pln">
+<pre><code><span class="kwd">import</span><span class="pln"> </span><span class="str">'package:serverpod_auth_server/serverpod_auth_server.dart'</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> auth</span><span class="pun">;</span><span class="pln">
 
 </span><span class="kwd">void</span><span class="pln"> run</span><span class="pun">(</span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">String</span><span class="pun">&gt;</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">async</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
  </span><span class="kwd">final</span><span class="pln"> pod </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Serverpod</span><span class="pun">(</span><span class="pln">
@@ -346,11 +342,11 @@ $ flutter run -d chrome</pre>
     });
   </script>
 
-  <script src="./files/native-shim.js"></script>
-  <script src="./files/custom-elements.min.js"></script>
-  <script src="./files/prettify.js"></script>
-  <script src="./files/codelab-elements.js"></script>
-  <script src="./files/api.js"></script>
+  <script src="./Full-stack Dart with Serverpod_files/native-shim.js"></script>
+  <script src="./Full-stack Dart with Serverpod_files/custom-elements.min.js"></script>
+  <script src="./Full-stack Dart with Serverpod_files/prettify.js"></script>
+  <script src="./Full-stack Dart with Serverpod_files/codelab-elements.js"></script>
+  <script src="./Full-stack Dart with Serverpod_files/api.js"></script>
 
 
 </body></html>
